@@ -1,46 +1,183 @@
-.Instagram {
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.instagram {
   display: flex;
-  background-color: rgb(230, 230, 230);
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(250, 250, 250);
 }
 
 .App-header {
   border-style: solid;
   border-width: 1px;
-  border-color: gray;
-  border-left-color: white;
-  border-right-color: white;
+  border-color: rgb(219, 219, 219) white rgb(219, 219, 219) white;
   background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 40px;
+  height: 54px;
+  width: 100%;
   margin-top: 10px;
-  margin-bottom: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-left: 150px;
-  padding-right: 150px;
+  margin-bottom: 30px;
 }
 
 .icones {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 
-
 .icone {
-  width: 30px;
-  padding: 10px;
+  height: 24px;
+  width: 24px;
+  margin: 10px;
   cursor: pointer;
 }
 
 .foto {
   border-radius: 50%;
-  width: 30px;
+  height: 22px;
+  cursor: pointer;
 }
 
 .botaoPesquisar {
-  padding: 100px;
+  background-color: rgb(250, 250, 250);
+  height: 28px;
+  width: 215px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px;
+  border-color: rgb(219, 219, 219);
+  border-radius: 3px;
+  color: #8e8e8e;
+  cursor: pointer;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+  width: 935px;
+}
+
+.left {
+  width: 614px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right {
+  width: 293px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.stories {
+  width: 614px;
+  height: 119px;
+  border: solid 1px;
+  border-color: rgb(219, 219, 219);
+  border-radius: 3px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.perfil {
+  width: 293px;
+  border: solid 1px;
+  border-color: rgb(219, 219, 219);
+  border-radius: 3px;
+}
+
+.amigo {
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  margin: 0px 15px 0px 15px;
+  cursor: pointer;
+}
+
+.friend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p.nome {
+  margin: 0px;
+  color: rgb(38, 38, 38);
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.publicacao {
+  width: 614px;
+  height: 100%;
+  border: solid 1px;
+  border-color: rgb(219, 219, 219);
+  border-radius: 3px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.postador {
+  width: 32px;
+  border-radius: 50%;
+  margin: 10px 15px;
+  cursor: pointer;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.identificacao {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.mais {
+  margin: 15px;
+  cursor: pointer;
+}
+
+.imagemPost {
+  width: 614px;
+  height: 100%;
+  border: solid 1px;
+  border-color: rgb(219, 219, 219);
+}
+
+.botaoInterativo {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.interacoes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
