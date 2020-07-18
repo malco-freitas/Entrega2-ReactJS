@@ -26,9 +26,9 @@ export default class Instagram extends Component {
     return (
       <div className="instagram">
         <div className="App-header">
-          <img height="15px" src={require('./components/instagram.png')} />
+          <img height="29px" src={require('./components/instagram.png')} />
           <div className="botaoPesquisar">
-            {/* <svg src={require("./components/lupa.svg")}></svg> */}
+            <img height="10px" src={require('./components/lupa.png')} />
             <p className="Pesquisar">Pesquisar</p>
           </div>
           <div className="icones">
@@ -39,15 +39,97 @@ export default class Instagram extends Component {
             <img className="foto" src={require('./components/foto.png')} />
           </div>
         </div>
-        <img
-          onClick={this.changeLikeColor}
-          className="icone"
-          width="30px"
-          className="icone"
-          src={require(liked
-            ? './components/coracaoCheio.svg'
-            : './components/coracao.svg')}
-        />
+
+        <div className="body">
+          <div className="left">
+            <div className="stories">
+              <div className="friend">
+                <img
+                  className="amigo"
+                  src={require('./components/amigo1.jpg')}
+                />
+                <p className="nome">rodrigo</p>
+              </div>
+              <div className="friend">
+                <img
+                  className="amigo"
+                  src={require('./components/amigo2.jpg')}
+                />
+                <p className="nome">hudson</p>
+              </div>
+              <div className="friend">
+                <img
+                  className="amigo"
+                  src={require('./components/amigo3.jpg')}
+                />
+                <p className="nome">nique</p>
+              </div>
+              <div className="friend">
+                <img
+                  className="amigo"
+                  src={require('./components/amigo4.jpg')}
+                />
+                <p className="nome">jesse.m</p>
+              </div>
+              <div className="friend">
+                <img
+                  className="amigo"
+                  src={require('./components/amigo5.jpg')}
+                />
+                <p className="nome">gouveia.h</p>
+              </div>
+            </div>
+            <div className="publicacao">
+              <div className="cabecalho">
+                <div className="identificacao">
+                  <img
+                    className="postador"
+                    src={require('./components/amigo6.jpg')}
+                  />
+                  <p className="nome">sostenescavalcante</p>
+                </div>
+                <img
+                  className="mais"
+                  width="16px"
+                  src={require('./components/mais.svg')}
+                />
+              </div>
+              <img
+                className="imagemPost"
+                src={require('./components/imagemPost.JPG')}
+              />
+              <div className="rodape">
+                <div className="interacoes">
+                  <div className="acoes">
+                    <img
+                      onClick={this.changeLikeColor}
+                      className="icone"
+                      src={require(liked
+                        ? './components/coracaoCheio.svg'
+                        : './components/coracao.svg')}
+                    />
+                    <img
+                      className="icone"
+                      src={require('./components/comente.svg')}
+                    />
+                    <img
+                      className="icone"
+                      src={require('./components/direct.svg')}
+                    />
+                  </div>
+                  <img
+                    className="botaoInterativo"
+                    src={require('./components/flagWhite.jpg')}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="right">
+            <div className="perfil"></div>
+          </div>
+        </div>
+
         <div className="Post">
           <Post likes={likes} tempo="1 DIA" />
         </div>
