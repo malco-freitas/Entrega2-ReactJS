@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import Post from './components/Post.js';
+import Curtidas from './components/Curtidas.js';
+import Comentarios from './components/Comentarios.js';
+import Time from './components/Time.js';
+// import Sugestao from './components/Sugestao.js';
 import './Instagram.css';
 
 export default class Instagram extends Component {
@@ -8,6 +11,7 @@ export default class Instagram extends Component {
     this.state = {
       liked: false,
       likes: 79,
+      saved: false,
     };
   }
 
@@ -21,8 +25,16 @@ export default class Instagram extends Component {
     }
   };
 
+  changeSaveColor = () => {
+    if (this.state.saved === true) {
+      this.setState({ saved: false });
+    } else {
+      this.setState({ saved: true });
+    }
+  };
+
   render() {
-    const { liked, likes } = this.state;
+    const { liked, likes, saved} = this.state;
     return (
       <div className="instagram">
         <div className="App-header">
@@ -36,7 +48,7 @@ export default class Instagram extends Component {
             <img className="icone" src={require('./components/direct.svg')} />
             <img className="icone" src={require('./components/bussola.svg')} />
             <img className="icone" src={require('./components/coracao.svg')} />
-            <img className="foto" src={require('./components/foto.png')} />
+            <img className="foto" src={require('./components/dono.jpg')} />
           </div>
         </div>
 
@@ -86,7 +98,7 @@ export default class Instagram extends Component {
                     className="postador"
                     src={require('./components/amigo6.jpg')}
                   />
-                  <p className="nome">sostenescavalcante</p>
+                  <p className="texto"  >sostenescavalcante</p>
                 </div>
                 <img
                   className="mais"
@@ -118,21 +130,112 @@ export default class Instagram extends Component {
                     />
                   </div>
                   <img
-                    className="botaoInterativo"
-                    src={require('./components/flagWhite.jpg')}
+                      onClick={this.changeSaveColor}
+                      className="icone"
+                      src={require(saved
+                        ? './components/flagBlack.jpg'
+                        : './components/flagWhite.jpg')}
                   />
                 </div>
+                <div className="Post">
+                  <Curtidas likes={likes}/>
+                </div>
+                <div>
+                  <Comentarios comentador="sostenescavalcante" comentario="O deputado Sóstenes continua com ótima evolução clínica. E vamos continuar orando para que em breve ele volte para casa. Juntos vamos vencer essa batalha.
+Continuamos em oração!"/>
+                  <Comentarios comentador="glaucobarrosgon" comentario="Deus no comando 👏👏🙏"/>
+                  <Comentarios comentador="pr_sergiomarques" comentario="A paz. Estamos em oração e confiando no agir de Deus.🙏🏾🙏🏾🙏🏾"/>
+                </div>
+                <div>
+                  <Time tempo="25 DE JUNHO"/>
+                </div>
               </div>
+
+            </div>
+            <div className="novoComentario">
+              <p className="addComent">Adicione um comentário...</p>
+              <p className="publicar">Publicar</p>
             </div>
           </div>
           <div className="right">
-            <div className="perfil"></div>
+            <div className="perfil">
+              <img className="fotoPerfil" src={require('./components/dono.jpg')}/>
+              <div className="dadosDono">
+                <b>malco.freitas</b>
+                <p className="descricaoDono">Malco Freitas</p>
+              </div>             
+            </div>
+            <div className="sugestoesTitulo">
+                <p className="sugestoesParaVoce">Sugestões para você</p>
+                <p className="verTudo">Ver tudo</p>
+            </div>
+            {/* <div>
+              <Sugestao nome="christianramos9"/>
+              <Sugestao nome="flaviatavares_moreira"/>
+              <Sugestao nome="levifarias1"/>
+              <Sugestao nome="_lucaum"/>
+              <Sugestao nome="mgadret_12"/>
+            </div> */}
+            <div className="linhaSugestao">
+              <div className="fotoNome">
+                <img className="fotoSugestao" src={require('./components/christianramos9.jpg')} />
+                <div className="identidade">
+                  <p className="nomeSugestao">christianramos9</p>
+                  <p className="descricaoDono">Segue você</p>
+                </div>
+              </div>
+              <p className="seguir">Seguir</p>           
+            </div>
+
+            <div className="linhaSugestao">
+              <div className="fotoNome">
+                <img className="fotoSugestao" src={require('./components/flaviatavares_moreira.jpg')} />
+                <div className="identidade">
+                  <p className="nomeSugestao">flaviatavares_moreira</p>
+                  <p className="descricaoDono">Segue você</p>
+                </div>
+              </div>
+              <p className="seguir">Seguir</p>           
+            </div>      
+
+            <div className="linhaSugestao">
+              <div className="fotoNome">
+                <img className="fotoSugestao" src={require('./components/levifarias1.jpg')} />
+                <div className="identidade">
+                  <p className="nomeSugestao">levifarias1</p>
+                  <p className="descricaoDono">Popular</p>
+                </div>
+              </div>
+              <p className="seguir">Seguir</p>           
+            </div>  
+
+            <div className="linhaSugestao">
+              <div className="fotoNome">
+                <img className="fotoSugestao" src={require('./components/_lucaum.jpg')} />
+                <div className="identidade">
+                  <p className="nomeSugestao">_lucaum</p>
+                  <p className="descricaoDono">Segue você</p>
+                </div>
+              </div>
+              <p className="seguir">Seguir</p>           
+            </div>
+
+            <div className="linhaSugestao">
+              <div className="fotoNome">
+                <img className="fotoSugestao" src={require('./components/mgadret_12.jpg')} />
+                <div className="identidade">
+                  <p className="nomeSugestao">mgadret_12</p>
+                  <p className="descricaoDono">Sugestões para você</p>
+                </div>
+              </div>
+              <p className="seguir">Seguir</p>           
+            </div>
+            <p className="final">Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos • Localizações • Contas mais relevantes • Hashtags •  idioma</p>
+            <p className="final">© 2020 INTAGRAM DO FACEBOOK</p>
           </div>
         </div>
 
-        <div className="Post">
-          <Post likes={likes} tempo="1 DIA" />
-        </div>
+
       </div>
     );
   }
