@@ -25,6 +25,20 @@ export default class Instagram extends Component {
     const { liked, likes } = this.state;
     return (
       <div className="instagram">
+        <div className="App-header">
+          <img height="15px" src={require('./components/instagram.png')} />
+          <div className="botaoPesquisar">
+            {/* <svg src={require("./components/lupa.svg")}></svg> */}
+            <p className="Pesquisar">Pesquisar</p>
+          </div>
+          <div className="icones">
+            <img className="icone" src={require('./components/home.svg')} />
+            <img className="icone" src={require('./components/direct.svg')} />
+            <img className="icone" src={require('./components/bussola.svg')} />
+            <img className="icone" src={require('./components/coracao.svg')} />
+            <img className="foto" src={require('./components/foto.png')} />
+          </div>
+        </div>
         <img
           onClick={this.changeLikeColor}
           className="icone"
