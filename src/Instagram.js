@@ -25,6 +25,7 @@ export default class Instagram extends Component {
     }
   };
 
+  // state para mudar cor da bandeirinha
   changeSaveColor = () => {
     if (this.state.saved === true) {
       this.setState({ saved: false });
